@@ -1,0 +1,15 @@
+{
+  "extensionName": "KodingKreators",
+  "description": "Koding Kreators mBlock 3 plugin",
+  "version": "0.0.1",
+  "author": "Koding Kreators",
+  "homepage": "kodingkreators.com",
+  "sort": 0,
+  "javascriptURL": "js/kodingkreators.js",
+  "firmware": "1.0",
+  "extensionPort": 0,
+  "blockSpecs": [],
+  "menus": {},
+  "values": {},
+  "translators": {}
+}
