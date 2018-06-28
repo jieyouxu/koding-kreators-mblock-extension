@@ -1,0 +1,2 @@
+# Koding Kreators mBlock 3 Extension
+This mBlock 3 extension aims to improve the mapping of the input pins and ports to facilitate students to utilize mBlock 3 with their Arduino Nano boards with less fatigue.
