@@ -1,7 +1,7 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Koding Kreators",
   "homepage": "https://kodingkreators.com",
   "sort": 0,
@@ -14,10 +14,10 @@
       "read analog sensor #1",
       "getAnalogSensor1",
       {
-        "inc": "#include <KodingKreators.h>\n",
+        "inc": "#include \"kodingkreators.h\"\n",
         "def": "",
         "setup": "pinMode(A0, INPUT);\n",
-        "work": "analogRead(A0);\n",
+        "work": "analogRead(A0)",
         "loop": ""
       }
     ],
@@ -26,10 +26,10 @@
       "read analog sensor #2",
       "getAnalogSensor2",
       {
-        "inc": "#include <KodingKreators.h>\n",
+        "inc": "#include \"kodingkreators.h\"\n",
         "def": "",
         "setup": "pinMode(A1, INPUT);\n",
-        "work": "analogRead(A1);\n",
+        "work": "analogRead(A1)",
         "loop": ""
       }
     ],
@@ -38,10 +38,10 @@
       "read analog sensor #3",
       "getAnalogSensor3",
       {
-        "inc": "#include <KodingKreators.h>\n",
+        "inc": "#include \"kodingkreators.h\"\n",
         "def": "",
         "setup": "pinMode(A2, INPUT);\n",
-        "work": "analogRead(A2);\n",
+        "work": "analogRead(A2)",
         "loop": ""
       }
     ],
@@ -50,10 +50,10 @@
       "read analog sensor #4",
       "getAnalogSensor4",
       {
-        "inc": "#include <KodingKreators.h>\n",
+        "inc": "#include \"kodingkreators.h\"\n",
         "def": "",
         "setup": "pinMode(A3, INPUT);\n",
-        "work": "analogRead(A3);\n",
+        "work": "analogRead(A3)",
         "loop": ""
       }
     ]
