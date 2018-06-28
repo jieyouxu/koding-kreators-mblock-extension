@@ -3,12 +3,61 @@
   "description": "Koding Kreators mBlock 3 plugin",
   "version": "0.0.1",
   "author": "Koding Kreators",
-  "homepage": "kodingkreators.com",
+  "homepage": "https://kodingkreators.com",
   "sort": 0,
   "javascriptURL": "js/kodingkreators.js",
   "firmware": "1.0",
   "extensionPort": 0,
-  "blockSpecs": [],
+  "blockSpecs": [
+    [
+      "R",
+      "read analog sensor #1",
+      "getAnalogSensor1",
+      {
+        "inc": "#include <KodingKreators.h>\n",
+        "def": "",
+        "setup": "pinMode(A0, INPUT);\n",
+        "work": "analogRead(A0);\n",
+        "loop": ""
+      }
+    ],
+    [
+      "R",
+      "read analog sensor #2",
+      "getAnalogSensor2",
+      {
+        "inc": "#include <KodingKreators.h>\n",
+        "def": "",
+        "setup": "pinMode(A1, INPUT);\n",
+        "work": "analogRead(A1);\n",
+        "loop": ""
+      }
+    ],
+    [
+      "R",
+      "read analog sensor #3",
+      "getAnalogSensor3",
+      {
+        "inc": "#include <KodingKreators.h>\n",
+        "def": "",
+        "setup": "pinMode(A2, INPUT);\n",
+        "work": "analogRead(A2);\n",
+        "loop": ""
+      }
+    ],
+    [
+      "R",
+      "read analog sensor #4",
+      "getAnalogSensor4",
+      {
+        "inc": "#include <KodingKreators.h>\n",
+        "def": "",
+        "setup": "pinMode(A3, INPUT);\n",
+        "work": "analogRead(A3);\n",
+        "loop": ""
+      }
+    ]
+  ],
   "menus": {},
   "values": {},
   "translators": {}
