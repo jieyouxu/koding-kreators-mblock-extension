@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.1.0] - 2018-06-29
 ### Added
 - Added read potentiometer (alias "knob") block.
+### Changed
+- Modified git workflow.
 
 ## [1.0.1] - 2018-06-28
 ### Fixed
