@@ -1,10 +1,5 @@
 // kodingkreators.js
 
-/**
- * Koding Kreators plugin for mBlock 3.
- * @version 0.0.1
- * @author Koding Kreators (https://www.kodingkreators.com)
- */
 (function(ext) {
   //* START: VARIABLE DEFINITIONS
   var device = null;
@@ -58,6 +53,11 @@
 
   ext.getAnalogSensor4 = function(nextID) {
     var pin = 3;
+    getAnalogSensor(nextID, pin);
+  };
+
+  ext.getPotentiometer = function(nextID) {
+    var pin = 4;
     getAnalogSensor(nextID, pin);
   };
   //* END: CUSTOM FUNCTIONS
