@@ -39,24 +39,9 @@
     getPackage(nextID, deviceId, pin);
   }
 
-  ext.getAnalogSensor1 = function(nextID) {
-    var pin = 0; // A0
-    readAnalogPin(nextID, pin);
-  };
-
-  ext.getAnalogSensor2 = function(nextID) {
-    var pin = 1; // A1
-    readAnalogPin(nextID, pin);
-  };
-
-  ext.getAnalogSensor3 = function(nextID) {
-    var pin = 2; // A2
-    readAnalogPin(nextID, pin);
-  };
-
-  ext.getAnalogSensor4 = function(nextID) {
-    var pin = 3; // A3
-    readAnalogPin(nextID, pin);
+  ext.getAnalogSensor = function(nextID, pin) {
+    var analogPin = parseInt(pin) - 1;
+    readAnalogPin(nextID, analogPin);
   };
 
   ext.getPotentiometer = function(nextID) {
