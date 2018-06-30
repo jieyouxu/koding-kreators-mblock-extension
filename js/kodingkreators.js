@@ -31,35 +31,51 @@
   //* END: SETUP CODE FOR EXTENSION
 
   //* START: CUSTOM FUNCTIONS
-  function getAnalogSensor(nextID, pin) {
+
+  //=== READ ANALOG PINS
+
+  function readAnalogPin(nextID, pin) {
     var deviceId = 31;
     getPackage(nextID, deviceId, pin);
   }
 
   ext.getAnalogSensor1 = function(nextID) {
-    var pin = 0;
-    getAnalogSensor(nextID, pin);
+    var pin = 0; // A0
+    readAnalogPin(nextID, pin);
   };
 
   ext.getAnalogSensor2 = function(nextID) {
-    var pin = 1;
-    getAnalogSensor(nextID, pin);
+    var pin = 1; // A1
+    readAnalogPin(nextID, pin);
   };
 
   ext.getAnalogSensor3 = function(nextID) {
-    var pin = 2;
-    getAnalogSensor(nextID, pin);
+    var pin = 2; // A2
+    readAnalogPin(nextID, pin);
   };
 
   ext.getAnalogSensor4 = function(nextID) {
-    var pin = 3;
-    getAnalogSensor(nextID, pin);
+    var pin = 3; // A3
+    readAnalogPin(nextID, pin);
   };
 
   ext.getPotentiometer = function(nextID) {
-    var pin = 4;
-    getAnalogSensor(nextID, pin);
+    var pin = 4; // A4
+    readAnalogPin(nextID, pin);
   };
+
+  //=== READ DIGITAL PINS
+
+  function readDigitalPin(nextID, pin) {
+    var deviceId = 30;
+    getPackage(nextID, deviceId, pin);
+  }
+
+  ext.getGreenButtonState = function(nextID) {
+    var pin = 8; // D8
+    readDigitalPin(nextID, pin);
+  };
+
   //* END: CUSTOM FUNCTIONS
 
   //* START: HELPER FUNCTIONS
