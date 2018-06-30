@@ -1,7 +1,7 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Koding Kreators",
   "homepage": "https://kodingkreators.com",
   "sort": 0,
@@ -66,6 +66,18 @@
         "def": "",
         "setup": "pinMode(A4, INPUT);\n",
         "work": "analogRead(A4)",
+        "loop": ""
+      }
+    ],
+    [
+      "B",
+      "read green button state",
+      "getGreenButtonState",
+      {
+        "inc": "",
+        "def": "",
+        "setup": "pinMode(D8, INPUT);\n",
+        "work": "digitalRead(D8)",
         "loop": ""
       }
     ]
