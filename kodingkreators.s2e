@@ -1,7 +1,7 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": "Koding Kreators",
   "homepage": "https://kodingkreators.com",
   "sort": 0,
@@ -11,15 +11,29 @@
   "blockSpecs": [
     [
       "R",
-      "read analog sensor #%d.analogSensorIDs",
+      "read analog %d.analogSensorIDs",
       "getAnalogSensor",
-      "1",
+      "AnalogSensor1",
       {
         "encode": "{d0}",
         "inc": "",
         "def": "",
-        "setup": "pinMode(A0+({0}-1), INPUT);\n",
-        "work": "analogRead(A0+({0}-1)",
+        "setup": "pinMode(A{0}, INPUT);\n",
+        "work": "analogRead(A{0})",
+        "loop": ""
+      }
+    ],
+    [
+      "B",
+      "read digital %d.digitalSensorIDs",
+      "getDigitalSensor",
+      "DigitalSensor1",
+      {
+        "encode": "{d0}",
+        "inc": "",
+        "def": "",
+        "setup": "pinMode(D{0}, INPUT);\n",
+        "work": "digitalRead(D{0})",
         "loop": ""
       }
     ],
@@ -49,8 +63,28 @@
     ]
   ],
   "menus": {
-    "analogSensorIDs": ["1", "2", "3", "4"]
+    "analogSensorIDs": [
+      "AnalogSensor1",
+      "AnalogSensor2",
+      "AnalogSensor3",
+      "AnalogSensor4"
+    ],
+    "digitalSensorIDs": [
+      "DigitalSensor1",
+      "DigitalSensor2",
+      "DigitalSensor3",
+      "DigitalSensor4"
+    ]
   },
-  "values": {},
+  "values": {
+    "AnalogSensor1": 0,
+    "AnalogSensor2": 1,
+    "AnalogSensor3": 2,
+    "AnalogSensor4": 3,
+    "DigitalSensor1": 13,
+    "DigitalSensor2": 12,
+    "DigitalSensor3": 5,
+    "DigitalSensor4": 4
+  },
   "translators": {}
 }
