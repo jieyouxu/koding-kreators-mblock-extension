@@ -21,6 +21,10 @@
     DigitalSensor3: 5,
     DigitalSensor4: 4,
   };
+  var servoMotorIDs = {
+    ServoMotor1: 11,
+    ServoMotor2: 10,
+  };
   //* END: VARIABLE DEFINITIONS
 
   //* START: SETUP CODE FOR EXTENSION
@@ -97,6 +101,19 @@
       typeof pin === 'string' ? digitalSensorIDs[pin] : parseInt(pin, 10);
     var state = typeof level === 'string' ? levels[level] : parseInt(level, 10);
     writeDigitalPin(digitalPin, state);
+  };
+
+  //=== WRITE SERVO MOTOR PINS
+
+  function writeServoMotor(pin, angle) {
+    runPackage(33, pin, angle);
+  }
+
+  ext.setServoMotor = function(pin, angle) {
+    var digitalPin =
+      typeof pin === 'string' ? servoMotorIDs[pin] : parseInt(pin, 10);
+    var servoAngle = typeof angle === 'number' ? angle : parseInt(angle, 10);
+    writeServoMotor(digitalPin, servoAngle);
   };
 
   //* END: CUSTOM FUNCTIONS
