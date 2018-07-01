@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2018-07-01
+### Added
+- Added write digital sensor block.
+
+## [1.4.0] - 2018-07-01
+### Added
+- Added read digital sensor block.
+### Changed
+- Modified UI mapping of values for sensor IDs.
+
 ## [1.3.0] - 2018-06-30
 ### Changed
 - Refactored read analog sensor blocks to utilize drop down menu.

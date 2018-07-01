@@ -1,7 +1,7 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "author": "Koding Kreators",
   "homepage": "https://kodingkreators.com",
   "sort": 0,
@@ -60,6 +60,21 @@
         "work": "digitalRead(D8)",
         "loop": ""
       }
+    ],
+    [
+      "w",
+      "set digital %d.digitalSensorIDs as %d.levels",
+      "setDigitalSensor",
+      "DigitalSensor1",
+      "HIGH",
+      {
+        "encode": "{d0}{d1}",
+        "inc": "",
+        "def": "",
+        "setup": "pinMode(D{0}, OUTPUT);\n",
+        "work": "digitalWrite(D{0}, {1});\n",
+        "loop": ""
+      }
     ]
   ],
   "menus": {
@@ -74,7 +89,8 @@
       "DigitalSensor2",
       "DigitalSensor3",
       "DigitalSensor4"
-    ]
+    ],
+    "levels": ["HIGH", "LOW"]
   },
   "values": {
     "AnalogSensor1": 0,
@@ -84,7 +100,9 @@
     "DigitalSensor1": 13,
     "DigitalSensor2": 12,
     "DigitalSensor3": 5,
-    "DigitalSensor4": 4
+    "DigitalSensor4": 4,
+    "HIGH": 1,
+    "LOW": 0
   },
   "translators": {}
 }
