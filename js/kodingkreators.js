@@ -79,6 +79,13 @@
     readDigitalPin(nextID, pin);
   };
 
+  ext.getUltrasonicSensor = function(nextID) {
+    var deviceId = 36;
+    var triggerPin = 7;
+    var echoPin = 6;
+    getPackage(nextID, deviceId, triggerPin, echoPin);
+  };
+
   //=== WRITE DIGITAL PINS
 
   function writeDigitalPin(pin, level) {

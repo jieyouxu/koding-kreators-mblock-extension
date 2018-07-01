@@ -1,7 +1,7 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "author": "Koding Kreators",
   "homepage": "https://kodingkreators.com",
   "sort": 0,
@@ -73,6 +73,19 @@
         "def": "",
         "setup": "pinMode(D{0}, OUTPUT);\n",
         "work": "digitalWrite(D{0}, {1});\n",
+        "loop": ""
+      }
+    ],
+    [
+      "R",
+      "read ultrasonic sensor distance (cm)",
+      "getUltrasonicSensor",
+      {
+        "inc": "",
+        "def":
+          "--separator--float getUltrasonicSensorDistance(int trig,int echo){\npinMode(trig,OUTPUT);\ndigitalWrite(trig,LOW);\ndelayMicroseconds(2);\ndigitalWrite(trig,HIGH);\ndelayMicroseconds(10);\ndigitalWrite(trig,LOW);\npinMode(echo, INPUT);\nreturn pulseIn(echo,HIGH,30000)/58.0;\n}\n",
+        "setup": "",
+        "work": "getUltrasonicSensorDistance(D7, D6)",
         "loop": ""
       }
     ]
