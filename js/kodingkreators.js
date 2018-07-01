@@ -79,6 +79,19 @@
     readDigitalPin(nextID, pin);
   };
 
+  //=== WRITE DIGITAL PINS
+
+  function writeDigitalPin(pin, level) {
+    runPackage(30, pin, level);
+  }
+
+  ext.setDigitalSensor = function(pin, level) {
+    var digitalPin =
+      typeof pin === 'string' ? digitalSensorIDs[pin] : parseInt(pin, 10);
+    var state = typeof level === 'string' ? levels[level] : parseInt(level, 10);
+    writeDigitalPin(digitalPin, state);
+  };
+
   //* END: CUSTOM FUNCTIONS
 
   //* START: HELPER FUNCTIONS
