@@ -4,9 +4,22 @@
   //* START: VARIABLE DEFINITIONS
   var device = null;
   var _rxBuf = [];
+
   var levels = {
     HIGH: 1,
     LOW: 0,
+  };
+  var analogSensorIDs = {
+    AnalogSensor1: 0,
+    AnalogSensor2: 1,
+    AnalogSensor3: 2,
+    AnalogSensor4: 3,
+  };
+  var digitalSensorIDs = {
+    DigitalSensor1: 13,
+    DigitalSensor2: 12,
+    DigitalSensor3: 5,
+    DigitalSensor4: 4,
   };
   //* END: VARIABLE DEFINITIONS
 
@@ -40,7 +53,7 @@
   }
 
   ext.getAnalogSensor = function(nextID, pin) {
-    var analogPin = parseInt(pin) - 1;
+    var analogPin = analogSensorIDs[pin];
     readAnalogPin(nextID, analogPin);
   };
 
@@ -55,6 +68,11 @@
     var deviceId = 30;
     getPackage(nextID, deviceId, pin);
   }
+
+  ext.getDigitalSensor = function(nextID, pin) {
+    var digitalPin = digitalSensorIDs[pin];
+    readDigitalPin(nextID, digitalPin);
+  };
 
   ext.getGreenButtonState = function(nextID) {
     var pin = 8; // D8
