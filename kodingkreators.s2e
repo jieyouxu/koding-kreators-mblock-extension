@@ -1,7 +1,7 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "author": "Koding Kreators",
   "homepage": "https://kodingkreators.com",
   "sort": 0,
@@ -88,6 +88,21 @@
         "work": "getUltrasonicSensorDistance(D7, D6)",
         "loop": ""
       }
+    ],
+    [
+      "w",
+      "set servo motor %d.servoMotorIDs as angle %d.servoMotorValues",
+      "setServoMotor",
+      "ServoMotor1",
+      90,
+      {
+        "encode": "{d0}{d1}",
+        "inc": "#include <Servo.h>\n",
+        "def": "Servo servo_{0};\n",
+        "setup": "servo_{0}.attach({0});\n",
+        "work": "servo_{0}.write({1});\n",
+        "loop": ""
+      }
     ]
   ],
   "menus": {
@@ -103,7 +118,9 @@
       "DigitalSensor3",
       "DigitalSensor4"
     ],
-    "levels": ["HIGH", "LOW"]
+    "levels": ["HIGH", "LOW"],
+    "servoMotorIDs": ["ServoMotor1", "ServoMotor2"],
+    "servoMotorValues": [45, 80, 90, 100, 135]
   },
   "values": {
     "AnalogSensor1": 0,
@@ -115,7 +132,9 @@
     "DigitalSensor3": 5,
     "DigitalSensor4": 4,
     "HIGH": 1,
-    "LOW": 0
+    "LOW": 0,
+    "ServoMotor1": 11,
+    "ServoMotor2": 10
   },
   "translators": {}
 }
