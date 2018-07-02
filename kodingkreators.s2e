@@ -1,7 +1,7 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "author": "Koding Kreators",
   "homepage": "https://kodingkreators.com",
   "sort": 0,
@@ -103,6 +103,24 @@
         "work": "servo_{0}.write({1});\n",
         "loop": ""
       }
+    ],
+    [
+      "w",
+      "set LED strip %d.ledIDs RED%d.rgbValues GREEN%d.rgbValues BLUE%d.rgbValues",
+      "setLEDStrip",
+      "LED1",
+      0,
+      0,
+      0,
+      {
+        "encode": "{d0}{d1}{d2}{d3}",
+        "inc": "#include \"NeoPixel.h\"\n\n",
+        "def":
+          "Adafruit_NeoPixel led_{0} = Adafruit_NeoPixel({0}, 9, NEO_GRB + NEO_KHZ800);\n\n",
+        "setup": "led_{0}.begin();\n",
+        "work": "led_{0}.setPixelColor({0}, {1}, {2}, {3});\nled_{0}.show();\n",
+        "loop": ""
+      }
     ]
   ],
   "menus": {
@@ -120,7 +138,9 @@
     ],
     "levels": ["HIGH", "LOW"],
     "servoMotorIDs": ["ServoMotor1", "ServoMotor2"],
-    "servoMotorValues": [45, 80, 90, 100, 135]
+    "servoMotorValues": [45, 80, 90, 100, 135],
+    "ledIDs": ["LED1", "LED2", "LED3", "LED4"],
+    "rgbValues": [0, 50, 100, 150, 200, 255]
   },
   "values": {
     "AnalogSensor1": 0,
@@ -134,7 +154,11 @@
     "HIGH": 1,
     "LOW": 0,
     "ServoMotor1": 11,
-    "ServoMotor2": 10
+    "ServoMotor2": 10,
+    "LED1": 1,
+    "LED2": 2,
+    "LED3": 3,
+    "LED4": 4
   },
   "translators": {}
 }
