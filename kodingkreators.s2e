@@ -114,11 +114,11 @@
       0,
       {
         "encode": "{d0}{d1}{d2}{d3}",
-        "inc": "#include \"NeoPixel.h\"\n\n",
-        "def":
-          "Adafruit_NeoPixel led_{0} = Adafruit_NeoPixel({0}, 9, NEO_GRB + NEO_KHZ800);\n\n",
-        "setup": "led_{0}.begin();\n",
-        "work": "led_{0}.setPixelColor({0}, {1}, {2}, {3});\nled_{0}.show();\n",
+        "inc": "#include \"WS2812.h\"\n\n",
+        "def": "WS2812 LED_{0}(4); // 4 LEDs in strip\n cRGB colorValue_{0};\n",
+        "setup": "LED_{0}.setOutput(9);\n",
+        "work":
+          "colorValue_{0}.r = {1};\ncolorValue_{0}.g = {2};\ncolorValue_{0}.b = {3};\nLED_{0}.set_crgb_at({0}-1, colorValue_{0});\nLED_{0}.sync();",
         "loop": ""
       }
     ]
