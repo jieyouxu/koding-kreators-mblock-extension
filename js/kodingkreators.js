@@ -25,6 +25,12 @@
     ServoMotor1: 11,
     ServoMotor2: 10,
   };
+  var ledIndicies = {
+    LED1: 1,
+    LED2: 2,
+    LED3: 3,
+    LED4: 4,
+  };
   //* END: VARIABLE DEFINITIONS
 
   //* START: SETUP CODE FOR EXTENSION
@@ -114,6 +120,14 @@
       typeof pin === 'string' ? servoMotorIDs[pin] : parseInt(pin, 10);
     var servoAngle = typeof angle === 'number' ? angle : parseInt(angle, 10);
     writeServoMotor(digitalPin, servoAngle);
+  };
+
+  //=== LED STRIP SUPPORT
+
+  ext.setLEDStrip = function(index, red, green, blue) {
+    var port = 9;
+    var ledIndex = typeof index === 'string' ? ledIndicies[index] : index;
+    runPackage(8, 0, port, ledIndex, red, green, blue);
   };
 
   //* END: CUSTOM FUNCTIONS
