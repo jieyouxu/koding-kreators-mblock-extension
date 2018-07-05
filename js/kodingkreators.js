@@ -31,6 +31,68 @@
     LED3: 3,
     LED4: 4,
   };
+  var notes = {
+    B0: 31,
+    C1: 33,
+    D1: 37,
+    E1: 41,
+    F1: 44,
+    G1: 49,
+    A1: 55,
+    B1: 62,
+    C2: 65,
+    D2: 73,
+    E2: 82,
+    F2: 87,
+    G2: 98,
+    A2: 110,
+    B2: 123,
+    C3: 131,
+    D3: 147,
+    E3: 165,
+    F3: 175,
+    G3: 196,
+    A3: 220,
+    B3: 247,
+    C4: 262,
+    D4: 294,
+    E4: 330,
+    F4: 349,
+    G4: 392,
+    A4: 440,
+    B4: 494,
+    C5: 523,
+    D5: 587,
+    E5: 659,
+    F5: 698,
+    G5: 784,
+    A5: 880,
+    B5: 988,
+    C6: 1047,
+    D6: 1175,
+    E6: 1319,
+    F6: 1397,
+    G6: 1568,
+    A6: 1760,
+    B6: 1976,
+    C7: 2093,
+    D7: 2349,
+    E7: 2637,
+    F7: 2794,
+    G7: 3136,
+    A7: 3520,
+    B7: 3951,
+    C8: 4186,
+    D8: 4699,
+  };
+  var beats = {
+    Half: 500,
+    Quarter: 250,
+    Eighth: 125,
+    Whole: 1000,
+    Double: 2000,
+    Zero: 0,
+  };
   //* END: VARIABLE DEFINITIONS
 
   //* START: SETUP CODE FOR EXTENSION
@@ -128,6 +190,18 @@
     var port = 9;
     var ledIndex = typeof index === 'string' ? ledIndicies[index] : index;
     runPackage(8, 0, port, ledIndex, red, green, blue);
+  };
+
+  //=== SPEAKER SUPPORT
+
+  ext.setSpeaker = function(note, beat) {
+    var speakerPin = 3;
+    var audioNote = typeof note === 'number' ? note : notes[note];
+    var audioBeat = typeof beat === 'number' ? beat : beats[beat];
+    var audioNoteArray = [audioNote];
+    var audioBeatArray = [audioBeat];
+    // 0x1 magic constants... I am not sure why such padding is required, but it does work...
+    runPackage(34, speakerPin, audioNoteArray, 0x1, audioBeatArray, 0x1);
   };
 
   //* END: CUSTOM FUNCTIONS
