@@ -1,7 +1,7 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.8.0",
+  "version": "1.8.2",
   "author": "Koding Kreators",
   "homepage": "https://kodingkreators.com",
   "sort": 0,
@@ -115,10 +115,12 @@
       {
         "encode": "{d0}{d1}{d2}{d3}",
         "inc": "#include \"WS2812.h\"\n\n",
-        "def": "WS2812 LED_{0}(4); // 4 LEDs in strip\n cRGB colorValue_{0};\n",
-        "setup": "LED_{0}.setOutput(9);\n",
+        "def":
+          "\n#ifndef KK_LED_H_WS2018_DEFINITION\n#define KK_LED_H_WS2018_DEFINITION\nWS2812 LED(4);\ncRGB defaultColorValue = {0, 0, 0};\ncRGB colorValue;\n#endif // KK_LED_H_WS2018_DEFINITION\n",
+        "setup":
+          "#ifndef KK_LED_H_WS2018_SETUP\n#define KK_LED_H_WS2018_SETUP\nLED.setOutput(9);\n    for (int __i__ = 0; __i__ < 4; __i__++) {LED.set_crgb_at(__i__, defaultColorValue);}\n#endif // KK_LED_H_WS2018_SETUP\n",
         "work":
-          "colorValue_{0}.r = {1};\ncolorValue_{0}.g = {2};\ncolorValue_{0}.b = {3};\nLED_{0}.set_crgb_at({0}-1, colorValue_{0});\nLED_{0}.sync();",
+          "colorValue.r = {1};\ncolorValue.g = {2};\ncolorValue.b = {3};\nLED.set_crgb_at({0}, colorValue);\nLED.sync();\n",
         "loop": ""
       }
     ]
@@ -138,7 +140,7 @@
     ],
     "levels": ["HIGH", "LOW"],
     "servoMotorIDs": ["ServoMotor1", "ServoMotor2"],
-    "servoMotorValues": [45, 80, 90, 100, 135],
+    "servoMotorValues": [0, 45, 80, 90, 100, 135, 180],
     "ledIDs": ["LED1", "LED2", "LED3", "LED4"],
     "rgbValues": [0, 50, 100, 150, 200, 255]
   },
@@ -155,10 +157,10 @@
     "LOW": 0,
     "ServoMotor1": 11,
     "ServoMotor2": 10,
-    "LED1": 1,
-    "LED2": 2,
-    "LED3": 3,
-    "LED4": 4
+    "LED1": 0,
+    "LED2": 1,
+    "LED3": 2,
+    "LED4": 3
   },
   "translators": {}
 }
