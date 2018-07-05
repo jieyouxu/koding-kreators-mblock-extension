@@ -32,8 +32,8 @@
         "encode": "{d0}",
         "inc": "",
         "def": "",
-        "setup": "pinMode(D{0}, INPUT);\n",
-        "work": "digitalRead(D{0})",
+        "setup": "pinMode({0}, INPUT);\n",
+        "work": "digitalRead({0})",
         "loop": ""
       }
     ],
@@ -56,8 +56,8 @@
       {
         "inc": "",
         "def": "",
-        "setup": "pinMode(D8, INPUT);\n",
-        "work": "digitalRead(D8)",
+        "setup": "pinMode(8, INPUT);\n",
+        "work": "digitalRead(8)",
         "loop": ""
       }
     ],
@@ -71,8 +71,8 @@
         "encode": "{d0}{d1}",
         "inc": "",
         "def": "",
-        "setup": "pinMode(D{0}, OUTPUT);\n",
-        "work": "digitalWrite(D{0}, {1});\n",
+        "setup": "pinMode({0}, OUTPUT);\n",
+        "work": "digitalWrite({0}, {1});\n",
         "loop": ""
       }
     ],
@@ -85,7 +85,7 @@
         "def":
           "--separator--float getUltrasonicSensorDistance(int trig,int echo){\npinMode(trig,OUTPUT);\ndigitalWrite(trig,LOW);\ndelayMicroseconds(2);\ndigitalWrite(trig,HIGH);\ndelayMicroseconds(10);\ndigitalWrite(trig,LOW);\npinMode(echo, INPUT);\nreturn pulseIn(echo,HIGH,30000)/58.0;\n}\n",
         "setup": "",
-        "work": "getUltrasonicSensorDistance(D7, D6)",
+        "work": "getUltrasonicSensorDistance(7, 6)",
         "loop": ""
       }
     ],
