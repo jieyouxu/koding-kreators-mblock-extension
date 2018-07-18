@@ -1,9 +1,9 @@
 {
   "extensionName": "KodingKreators",
   "description": "Koding Kreators mBlock 3 plugin",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "author": "Koding Kreators",
-  "homepage": "https://kodingkreators.com",
+  "homepage": "http://kodingkreators.com",
   "sort": 0,
   "javascriptURL": "js/kodingkreators.js",
   "firmware": "1.0",
@@ -282,5 +282,31 @@
     "Double": 2000,
     "Zero": 0
   },
-  "translators": {}
+  "translators": {
+    "zh_CN": {
+      "read analog %d.analogSensorIDs": "读取模拟感应器 %d.analogSensorIDs",
+      "read digital %d.digitalSensorIDs": "读取数字感应器 %d.digitalSensorIDs",
+      "read potentiometer (knob)": "读取电位计(旋钮)",
+      "read green button state": "读取绿色按钮",
+      "set digital %d.digitalSensorIDs as %d.levels":
+        "设数字输出 %d.digitalSensorIDs 为 %d.levels",
+      "read ultrasonic sensor distance (cm)": "读取超声波感应器(厘米)",
+      "set servo motor %d.servoMotorIDs as angle %d.servoMotorValues":
+        "设伺服马达 %d.servoMotorIDs 为 %d.servoMotorValues 角度",
+      "set LED strip %d.ledIDs RED%d.rgbValues GREEN%d.rgbValues BLUE%d.rgbValues":
+        "设LED灯 %d.ledIDs 颜色为红 %d.rgbValues 绿 %d.rgbValues 蓝 %d.rgbValues",
+      "play tone on note %d.notes beat %d.beats":
+        "用扬声器播放音符为 %d.notes 节拍为 %d.beats 的声音",
+      "AnalogSensor1": "模拟感应器1",
+      "AnalogSensor2": "模拟感应器2",
+      "AnalogSensor3": "模拟感应器3",
+      "AnalogSensor4": "模拟感应器4",
+      "DigitalSensor1": "数字感应器1",
+      "DigitalSensor2": "数字感应器2",
+      "DigitalSensor3": "数字感应器3",
+      "DigitalSensor4": "数字感应器4",
+      "ServoMotor1": "伺服马达1",
+      "ServoMotor2": "伺服马达2"
+    }
+  }
 }
