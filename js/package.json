@@ -1,0 +1,18 @@
+{
+  "name": "koding-kreators-mblock-extension",
+  "version": "1.10.0",
+  "description": "JS component koding kreators extension.",
+  "main": "kodingkreators.js",
+  "repository": "https://github.com/jieyouxu/koding-kreators-mblock-extension",
+  "author": "Jieyou Xu (Joe)",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1"
+  },
+  "scripts": {
+    "test": "mocha test/kodingkreators.spec.js"
+  }
+}

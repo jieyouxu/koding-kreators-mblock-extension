@@ -4,3 +4,4 @@ kk.s2e
 .idea/
 .vscode/
 dist/
+.nyc_output/
