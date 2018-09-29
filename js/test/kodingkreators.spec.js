@@ -117,29 +117,51 @@ describe("KodingKreators", () => {
 
   describe(`#_mblockApiHelpers`, () => {
     describe(`##extend`, () => {
-      let objA = {a: 1, b: 2, c: {d: 3}, g: 6};
-      let objB = {
-        a: 2,
-        b: 2,
-        c: {
-          d: 4, e: 4
-        },
-        f: 5
-      };
+      it(`should work with deeply nested complicated objects`, () => {
+        let objA = {a: 1, b: 2, c: {d: 3}, g: 6};
+        let objB = {
+          a: 2,
+          b: 2,
+          c: {
+            d: 4, e: 4
+          },
+          f: 5
+        };
 
-      let expectedObj = {
-        a: 2,
-        b: 2,
-        c: {
-          d: 4, e: 4
-        },
-        f: 5,
-        g: 6
-      };
+        let expectedObj = {
+          a: 2,
+          b: 2,
+          c: {
+            d: 4, e: 4
+          },
+          f: 5,
+          g: 6
+        };
 
-      let actualObj = KodingKreators._mblockApiHelpers.extend(objA, objB);
+        let actualObj = KodingKreators._mblockApiHelpers.extend(objA, objB);
 
-      expect(actualObj).to.deep.equal(expectedObj);
+        expect(actualObj).to.deep.equal(expectedObj);
+
+      });
+
+      it(`should work with empty objects`, () => {
+        let expectedObj = {};
+        let actualObj = {};
+        expect(actualObj).to.deep.equal(expectedObj);
+      });
+
+      it(`should work with simple objects`, () => {
+        let objectA = {
+          a: 1
+        };
+
+        let objectB = {
+          a: 2
+        };
+
+        let expectedObj = {};
+
+      });
     });
   });
 
